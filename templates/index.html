@@ -8,30 +8,82 @@
         <div class="overlay"></div>
         <div class="content">
             <h1>We are Work<em>ish</em></h1>
-            <p class="lead">Connecting UK talent to opportunity</p>
+            <p class="fs-1">Connecting talent to opportunity</p>
         </div>
     </header>
 
     <!-- Scroll Content Sections -->
-    <section class="py-5 bg-light text-center">
+    <section class="py-5">
         <div class="container">
-            <h2 class="mb-4">What we do</h2>
-            <p>We match candidates to roles across IT, Healthcare, Construction, and Education.</p>
+          <h2 class="text-center mb-4">What We Do</h2>
+          <p class="lead text-center mb-5">
+            At <strong>Work<em>ish</em></strong>, we connect great people with great opportunities. Whether you're looking for your next role or hiring top talent, we're here to simplify the process — no fluff, no jargon, just results.
+          </p>
+          <div class="row text-center">
+            <div class="col-md-4">
+              <h5><i class="bi bi-briefcase-fill me-2"></i>For Candidates</h5>
+              <p>We work with you to understand your goals, skillsets, and aspirations — then match you with work that works for you.</p>
+            </div>
+            <div class="col-md-4">
+              <h5><i class="bi bi-people-fill me-2"></i>For Employers</h5>
+              <p>We help teams grow with people who fit — culturally, professionally, and practically. Because recruitment should be thoughtful, not transactional.</p>
+            </div>
+            <div class="col-md-4">
+              <h5><i class="bi bi-lightbulb-fill me-2"></i>For the Future</h5>
+              <p>We believe in long-term careers, not quick fixes. That means clear communication, honest feedback, and always learning what's next.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section class="section-dark py-5 text-center">
+        <div class="container">
+            <h2 class="mb-4">What our candidates say</h2>
+            <div class="row text-center">
+                <div class="col-md mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{ url_for('static', filename='img/testimonials/susanna.avif')}}" class="rounded-circle img-fluid mt-3 mx-auto" style="width: 100px; height: 100px;" alt="Susanna">
+                        <div class="body">
+                            <blockquote class="blockquote mt-3">
+                                <p>"Workish have been awesome! Mondays used to be so manic but now I'm working my ideal job where I get to work from home on Monday. Absolute game-changer!"</p>
+                                <footer class="blockquote-footer mt-4 mb-4">Susanna</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{ url_for('static', filename='img/testimonials/kevin.avif')}}" class="rounded-circle img-fluid mt-3 mx-auto" style="width: 100px; height: 100px;" alt="Kevin">
+                        <div class="body">
+                            <blockquote class="blockquote mt-3">
+                                <p>"I was so down. I'd been working so hard. Punching my card. Eight hours. For what? Then I spoke to Workish and I'm now working in my dream job and I feel footloose."</p>
+                                <footer class="blockquote-footer mt-4 mb-4">Kenny</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{ url_for('static', filename='img/testimonials/dolly.jpg')}}" class="rounded-circle img-fluid mt-3 mx-auto" style="width: 100px; height: 100px;" alt="Dolly">
+                        <div class="body">
+                            <blockquote class="blockquote mt-3">
+                                <p>"I'm so happy. Work<em>ish</em> looked after me and found my dream job. I'm now working 9 to 5. What a way to make a living."</p>
+                                <footer class="blockquote-footer mt-4 mb-4">Dolly</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-5 text-center">
+    <section class="py-5 section-light text-center">
         <div class="container">
-            <h2 class="mb-4">Testimonials</h2>
-            <p>“Thanks to Workish, I found a role within a week!” - Candidate A</p>
-            <p>“Workish made the hiring process seamless.” - Employer B</p>
+          <h2 class="mb-4">Let's Get to Work</h2>
+          <p class="lead mb-4">
+            Whether you're ready for a new challenge or building a team that delivers, <strong>Work<em>ish</em></strong> is your trusted partner. We make the process simple, personal and effective — the way hiring should be.
+          </p>
+          <a href="/contact" class="btn btn-lg">Start the Conversation</a>
         </div>
-    </section>
-
-    <section class="py-5 bg-light text-center">
-        <div class="container">
-            <h2 class="mb-4">Let's get to work</h2>
-            <p>We’re here to help. Get in touch today.</p>
-        </div>
-    </section>
+      </section>
 {% endblock %}

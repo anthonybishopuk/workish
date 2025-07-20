@@ -5,9 +5,27 @@ body {
     background-color: #e0dfd5;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: "Playfair Display", serif;
+}
+
 h1 {
     font-family: "Playfair Display", serif;
-    font-size: 170px;
+    font-size: 120px;
+    color: #292f36;
+}
+
+p {
+    font-weight: 400;
+}
+
+.section-dark {
+    background-color: #BA5C12;
+    color: #e0dfd5;
+}
+
+.section-light {
+    background-color: #e0dfd5;
     color: #292f36;
 }
 
@@ -37,11 +55,42 @@ h1 {
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.35);
+    background-color: rgba(255, 255, 255, 0.5);
     z-index: 1;
 }
 
 .hero-image .content {
+    color: #292f36;
     z-index: 2;
     position: relative;
+}
+
+.btn {
+    font-family: "Playfair Display", serif;
+    background-color: #BA5C12;
+    color: #e0dfd5;
+}
+.btn:hover {
+    background-color: #BA5C12;
+    color: #fff;
+}
+
+.card {
+    padding: 10px 10px 10px 10px;
+    font-style: italic;
+}
+
+.footer {
+    background-color: #292f36;
+    color: #e0dfd5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.footer a {
+    color: #e0dfd5;
+}
+.trademark {
+    font-family: "Playfair Display", serif;
+    font-size: large;
+    color: #e0dfd5;
 }
