@@ -21,12 +21,15 @@
         </div>
     </nav>
 
+    {% if show_hero %}
+        {% include "_hero.html" %}
+    {% endif %}
+
     <main>{% block content %}{% endblock %}</main>
 
     <footer class="footer">
         <div class="container text-center">
-            <p class="trademark mt-5">&copy; 2025 Work<em>ish</em>. All rights reserved.</p>
-            <p class="trademark mb-3"><em>Recuitment, but nicer</em></p>
+            <p class="trademark mt-5">&copy; Work<em>ish</em> 2025</p>
             <div class="mb-3">
                 <a href="#" class="mx-2">Privacy Policy</a>
                 <a href="#" class="mx-2">Terms of Service</a>

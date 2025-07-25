@@ -1,0 +1,12 @@
+<section class="hero-section position-relative {{ hero_height or 'hero-default' }}"
+         style="background-image: url('{{ hero_image }}'); background-size: cover; background-position: center;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content text-center d-flex flex-column justify-content-center align-items-center h-100">
+        {% if hero_heading %}
+            <h1 class="display-1">{{ hero_heading|safe }}</h1>
+        {% endif %}
+        {% if hero_subtext %}
+            <h1 class="display-6">{{ hero_subtext|safe }}</p>
+        {% endif %}
+    </div>
+</section>
