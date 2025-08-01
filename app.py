@@ -26,7 +26,13 @@ def about():
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    return render_template(
+        "contact.html",
+        show_hero=True,
+        hero_image=url_for('static', filename='img/phone_call.jpg'),
+        hero_heading="Contact <em>Us</em>",
+        hero_height="hero-default"
+        )
 
 if __name__ == "__main__":
     app.run(debug=True)

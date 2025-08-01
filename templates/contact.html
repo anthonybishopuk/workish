@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Workish{% endblock %}
+
+{% block content %}
+<section class="section-light py-5">
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Get in Touch</h2>
+        <p class="text-center mb-5">Got questions? Whether you're hiring, job-hunting, or just curious, we'd love to hear from you. Drop us a message below and we'll get back to you faster than you can say "per my last email."</p>
+    </div>
+</section>
+
+<section class="section-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">General Enquiries</div>
+            <div class="col-6">
+                <form class="container mb-5" method="POST" action="/contact">
+                  <div class="mb-3">
+                      <label for="name" class="form-label">Your Name</label>
+                      <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Your Email</label>
+                      <input type="text" class="form-control" id="email" name="email" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea class="form-control" id="message" rows="5" required></textarea>
+                  </div>
+                  <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
