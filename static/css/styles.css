@@ -23,10 +23,15 @@ p {
     font-weight: 400;
 }
 
+a {
+  color: #fff;
+}
+
 .section-dark {
     background-color: #BA5C12;
     color: #e0dfd5;
 }
+
 
 .section-light {
     background-color: #e0dfd5;
@@ -53,9 +58,21 @@ p {
     background-color: #BA5C12;
     color: #e0dfd5;
 }
+
+.dark-btn {
+    font-family: "Playfair Display", serif;
+    background-color: #e0dfd5;
+    color: #292f36;
+}
+
 .btn:hover {
-    background-color: #BA5C12;
     color: #fff;
+    background-color: #BA5C12;
+}
+
+.dark-btn:hover {
+    color: #292f36;
+    background-color: #fff;
 }
 
 .hero-section {
@@ -90,6 +107,10 @@ p {
 .card {
     padding: 10px 10px 10px 10px;
     font-style: italic;
+}
+
+.job-card {
+    padding: 10px;
 }
 
 .footer {

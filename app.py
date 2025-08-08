@@ -29,10 +29,21 @@ def contact():
     return render_template(
         "contact.html",
         show_hero=True,
-        hero_image=url_for('static', filename='img/phone_call.jpg'),
+        hero_image=url_for('static', filename='img/telephone_wall.jpg'),
         hero_heading="Contact <em>Us</em>",
         hero_height="hero-default"
         )
+
+@app.route("/jobs")
+def jobs():
+    return render_template(
+        "jobs.html",
+        show_hero=True,
+        hero_image=url_for('static', filename='img/binoculars_search.jpg'),
+        hero_heading="Search",
+        hero_subtext="Find <em>your</em> future",
+        hero_height="hero-default"
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

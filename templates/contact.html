@@ -6,16 +6,42 @@
 <section class="section-light py-5">
     <div class="container my-5">
         <h2 class="text-center mb-4">Get in Touch</h2>
-        <p class="text-center mb-5">Got questions? Whether you're hiring, job-hunting, or just curious, we'd love to hear from you. Drop us a message below and we'll get back to you faster than you can say "per my last email."</p>
+        <p class="lead text-center mb-5">Got questions? Well, we'd love to talk to you. Whether you're hiring, job-hunting, or just curious. <br>
+            Drop us a message below and we'll get back to you faster than you can say "per my last email."</p>
     </div>
 </section>
 
 <section class="section-dark py-5">
     <div class="container">
         <div class="row">
-            <div class="col-6">General Enquiries</div>
             <div class="col-6">
-                <form class="container mb-5" method="POST" action="/contact">
+                <h2 class="mb-4">General Enquiries</h2>
+                <div class="row">
+                    <div class="col-1 mb-5">
+                        <h2 class="lead"><i class="bi bi-envelope-fill me-2"></i></h2>
+                    </div>
+                    <div class="col-11">
+                        <h4>Email Us</h4>
+                        <a href="mailto:contact@workish.com">contact@workish.com</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="col-11">
+                        <h4>Find Us</h4>
+                        7 The Avenue<br>
+                        London<br>
+                        WC2A 2JR
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <h2 class="mb-4">Message Us</h2>
+                <form class="container mb-5" method="POST" action="/contact" enctype="multipart/form-data">
                   <div class="mb-3">
                       <label for="name" class="form-label">Your Name</label>
                       <input type="text" class="form-control" id="name" name="name" required>
@@ -28,7 +54,11 @@
                       <label for="message" class="form-label">Message</label>
                       <textarea class="form-control" id="message" rows="5" required></textarea>
                   </div>
-                  <button type="submit" class="btn">Send Message</button>
+                  <div class="mb-3">
+                        <label for="cv" class="form-label">Upload your CV (optional)</label>
+                        <input class="form-control" type="file" id="cv" name="cv" accept=".pdf, .doc, .docx">
+                  </div>
+                  <button type="submit" class="btn dark-btn btn-lg">Send Email</button>
                 </form>
             </div>
         </div>
