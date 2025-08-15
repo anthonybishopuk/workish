@@ -3,37 +3,67 @@
 {% block title %}Jobs - Workish{% endblock %}
 
 {% block content %}
-    <section class="py-5">
-        <div class="container">
-        <div class="row">
-            <div class="col-md mb-4">
-                <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">card 1</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
+    <div class="container my-5">
+    <div class="row">
+    
+    <!-- Sidebar -->
+    <div class="col-md-3 mb-4">
+      <div class="card shadow-sm sticky-sidebar">
+        <div class="card-body">
+          <h5 class="card-title mb-3">Filter Jobs</h5>
+          <hr>
+
+          <!-- Job Type -->
+          <div class="mb-4">
+            <label class="form-label fw-bold">Job Type</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="fulltime" id="fulltime">
+              <label class="form-check-label" for="fulltime">Full-time</label>
             </div>
-            <div class="col-md mb-4">
-                <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">card 2</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="parttime" id="parttime">
+              <label class="form-check-label" for="parttime">Part-time</label>
             </div>
-            <div class="col-md mb-4">
-                <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">card 3</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="contract" id="contract">
+              <label class="form-check-label" for="contract">Contract</label>
             </div>
+          </div>
+
+          <!-- Location -->
+          <div class="mb-4">
+            <label class="form-label fw-bold">Location</label>
+            <input type="text" class="form-control" placeholder="Enter city or remote">
+          </div>
+
+          <!-- Apply Filters -->
+          <button class="btn">Apply Filters</button>
         </div>
+      </div>
+    </div>
+    
+    <!-- Job Cards -->
+    <div class="col-md-9">
+      <div class="row g-4">
+        {% for job in jobs %}
+        <!-- Job Card Example -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 job-card">
+            <div class="card-body">
+              <h5 class="card-title">{{ job["title"] }}</h5>
+              <p class="card-text">{{ job["description_preview"] }}</p>
+              <p class="card-text text-muted small mb-2">{{ job["location"] }}</p>
+              <p class="card-text text-muted small mb-2">{{ job["salary"] }}</p>
+              <a href="{{ url_for('job_detail', job_id=job.job_id) }}" class="btn">View Job</a>
+            </div>
+          </div>
         </div>
-    </section>
+        {% endfor %}
+        <!-- Repeat cards here or with Jinja loop -->
+        
+      </div>
+    </div>
+
+  </div>
+</div>
 {% endblock %}

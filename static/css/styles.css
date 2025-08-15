@@ -88,6 +88,10 @@ a {
   height: 100vh;
 }
 
+.hero-short {
+  height: 40vh;
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -109,8 +113,8 @@ a {
     font-style: italic;
 }
 
-.job-card {
-    padding: 10px;
+.card-body {
+    font-style: normal;
 }
 
 .footer {
@@ -203,4 +207,24 @@ a {
 
 .timeline-item.right .timeline-box {
   margin-right: 30px;
+}
+
+/* Sticky Sidebar */
+.sticky-sidebar {
+  position: sticky;
+  top: 10rem;
+}
+
+/* Job Card Hover */
+.job-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.job-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Checkbox spacing */
+.form-check {
+  margin-bottom: 0.5rem;
 }
