@@ -1,1 +1,1 @@
-web: gunicorn workish:app
+web: gunicorn app:app
