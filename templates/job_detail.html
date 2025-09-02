@@ -7,6 +7,7 @@
         <div class="row">
     <!-- Left Column: Job Info -->
             <div class="col-md-8">
+                <p class="text-muted small">Ref: {{ job["job_id"]}}</p>
                 <h4>{{ job["title"] }}</h4>
                 <p class="text-muted">
                 {{ job["location"] }}{% if job["salary"] %} | {{ job["salary"] }}{% endif %}
@@ -20,22 +21,32 @@
 
     <!-- Right Column: Application Form -->
     <div class="col-md-4">
-        <div class="card p-4 shadow-sm">
+        <div class="card-body p-4 shadow-sm">
             <h4 class="mb-3">Apply Now</h4>
-            <form method="post" enctype="multipart/form-data">
+            <form action="{{ url_for('apply', job_id=job['job_id']) }}" method="POST" enctype="multipart/form-data">
+                
+                <input type="hidden" name="jobdivaid" value="{{ job['jobdivaid'] }}">
+                
+                <input type="hidden" name="job_id" value="{{ job['job_id'] }}">
+
                 <div class="mb-3">
-                    <label for="name" class="form-label">Full Name</label>
-                    <input type="text" name="name" class="form-control" required>
+                    <label for="name" class="form-label">First Name</label>
+                    <input type="text" id="firstname" name="first_name" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
+                    <label for="name" class="form-label">Last Name</label>
+                    <input type="text" id="lastname" name="last_name" class="form-control" required>
+                </div>
+                
+                <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" class="form-control" required>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="cv" class="form-label">Upload CV</label>
-                    <input type="file" name="cv" class="form-control" accept=".pdf,.doc,.docx" required>
+                    <input type="file" id="cv" name="cv_file" class="form-control" accept=".pdf,.doc,.docx" required>
                 </div>
 
                     <button type="submit" class="btn w-100">Submit Application</button>

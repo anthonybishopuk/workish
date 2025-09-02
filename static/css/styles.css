@@ -115,6 +115,8 @@ a {
 
 .card-body {
     font-style: normal;
+    background-color: #fff;
+    border-radius: 0.5rem;
 }
 
 .footer {
@@ -227,4 +229,14 @@ a {
 /* Checkbox spacing */
 .form-check {
   margin-bottom: 0.5rem;
+}
+
+.form-check-input:checked {
+  background-color: #292f36;
+  border-color: #292f36;
+}
+
+.form-check-input:focus {
+  border-color: #292f36;
+  box-shadow: 0 0 0 0.25rem rgba(41, 47, 54, 0.25);
 }

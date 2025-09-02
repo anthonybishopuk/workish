@@ -3,67 +3,91 @@
 {% block title %}Jobs - Workish{% endblock %}
 
 {% block content %}
-    <div class="container my-5">
+<div class="container my-5">
     <div class="row">
-    
-    <!-- Sidebar -->
-    <div class="col-md-3 mb-4">
-      <div class="card shadow-sm sticky-sidebar">
-        <div class="card-body">
-          <h5 class="card-title mb-3">Filter Jobs</h5>
-          <hr>
+  
+        <!-- Sidebar -->
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm sticky-sidebar">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Filter Jobs</h5>
+                <hr>
 
-          <!-- Job Type -->
-          <div class="mb-4">
-            <label class="form-label fw-bold">Job Type</label>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="fulltime" id="fulltime">
-              <label class="form-check-label" for="fulltime">Full-time</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="parttime" id="parttime">
-              <label class="form-check-label" for="parttime">Part-time</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="contract" id="contract">
-              <label class="form-check-label" for="contract">Contract</label>
-            </div>
-          </div>
+                <!-- Start Form-->
+                <form method="get" action="{{ url_for('jobs') }}">
 
-          <!-- Location -->
-          <div class="mb-4">
-            <label class="form-label fw-bold">Location</label>
-            <input type="text" class="form-control" placeholder="Enter city or remote">
-          </div>
+                    <!-- Job Type -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Job Type</label>
+                        {% for type in all_position_types %}
+                        <div class="form-check">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="positiontype" 
+                                value="{{ type }}" 
+                                id="position_type_{{ loop.index }}" 
+                                {% if type in selected_position_types %}checked{% endif %}>
+                            <label class="form-check-label" for="position_type_{{ loop.index }}">{{ type }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
 
-          <!-- Apply Filters -->
-          <button class="btn">Apply Filters</button>
+                    <!-- Division -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Division</label>
+                        {% for division in all_divisions %}
+                        <div class="form-check">
+                            <input 
+                                class="form-check-input" 
+                                type="checkbox" 
+                                name="division" 
+                                value="{{ division }}" 
+                                id="division_{{ loop.index }}" 
+                                {% if division in selected_divisions %}checked{% endif %}>
+                                <label class="form-check-label" for="division_{{ loop.index }}">{{ division }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Location -->
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Location</label>
+                        <input 
+                            type="text" 
+                            name="location" 
+                            class="form-control" 
+                            placeholder="Enter city, county, or postcode" 
+                            value="{{ location_search }}">
+                    </div>
+
+                    <!-- Apply Filters -->
+                    <button type="submit" class="btn">Apply Filters</button>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
-    
+
     <!-- Job Cards -->
     <div class="col-md-9">
-      <div class="row g-4">
-        {% for job in jobs %}
-        <!-- Job Card Example -->
-        <div class="col-lg-4 col-md-6">
-          <div class="card h-100 job-card">
-            <div class="card-body">
-              <h5 class="card-title">{{ job["title"] }}</h5>
-              <p class="card-text">{{ job["description_preview"] }}</p>
-              <p class="card-text text-muted small mb-2">{{ job["location"] }}</p>
-              <p class="card-text text-muted small mb-2">{{ job["salary"] }}</p>
-              <a href="{{ url_for('job_detail', job_id=job.job_id) }}" class="btn">View Job</a>
+        <div class="row g-4">
+            {% for job in jobs %}
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 job-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job["title"] }}</h5>
+                        <p class="card-text">{{ job["description_preview"] }}</p>
+                        <p class="card-text text-muted small mb-2">{{ job["positiontype"] }}</p>
+                        <p class="card-text text-muted small mb-2">{{ job["location"] }}</p>
+                        <p class="card-text text-muted small mb-2">{{ job["salary"] }}</p>
+                        <a href="{{ url_for('job_detail', job_id=job.job_id) }}" class="btn mt-2">View Job</a>
+                    </div>
+                </div>
             </div>
-          </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-        <!-- Repeat cards here or with Jinja loop -->
-        
-      </div>
     </div>
 
-  </div>
+    </div>
 </div>
 {% endblock %}

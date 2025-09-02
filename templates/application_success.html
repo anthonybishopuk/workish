@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Application confirmed - Workish{% endblock %}
+
+{% block content %}
+
+    <section class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">We got your application</h2>
+		  <h4>Good luck, {{ firstname}}. We're rooting for you.</h4>
+          <p class="mb-4 lead">Your application for the <strong>{{ job['title'] }}</strong> job, ref: {{ job['job_id'] }}, has been submitted successfully.</p>
+          <p class="mb-4 lead">We've got our fingers crossed for you and will be in touch with you with details as soon as we can!</p>
+          <p class="mb-4 lead">In the meantime, why not take a look at the other jobs we have in case some others tickle your fancy.</p>
+          
+        <div class="my-5">
+            <a href="{{ url_for('jobs') }}" class="btn">← Back to Jobs</a>
+        </div>
+    </section>
+
+{% endblock %}
